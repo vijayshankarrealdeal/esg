@@ -44,17 +44,6 @@ RUN apt-get update && \
     apt-get install -y neo4j && \
     rm -rf /var/lib/apt/lists/*
 
-# ------------------------------------------------------------------
-# Install Go
-# ------------------------------------------------------------------
-RUN wget https://go.dev/dl/go1.23.4.linux-amd64.tar.gz && \
-    tar -C /usr/local -xzf go1.23.4.linux-amd64.tar.gz && \
-    rm go1.23.4.linux-amd64.tar.gz
-
-# Set Go environment variables
-ENV GOPATH=/home/vscode/go
-ENV PATH="/usr/local/go/bin:${GOPATH}/bin:${PATH}"
-
 # Create Go workspace
 RUN mkdir -p ${GOPATH}
 
