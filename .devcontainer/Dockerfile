@@ -8,7 +8,6 @@ FROM mcr.microsoft.com/devcontainers/base:ubuntu
 # ------------------------------------------------------------------
 # Set Environment Variables for Versions (adjust as needed)
 # ------------------------------------------------------------------
-ENV GO_VERSION=1.23.1
 ENV NODE_VERSION=22.x
 
 # ------------------------------------------------------------------
@@ -48,9 +47,9 @@ RUN apt-get update && \
 # ------------------------------------------------------------------
 # Install Go
 # ------------------------------------------------------------------
-RUN wget https://golang.org/dl/go${GO_VERSION}.linux-amd64.tar.gz && \
-    tar -C /usr/local -xzf go${GO_VERSION}.linux-amd64.tar.gz && \
-    rm go${GO_VERSION}.linux-amd64.tar.gz
+RUN wget https://go.dev/dl/go1.23.4.linux-amd64.tar.gz && \
+    tar -C /usr/local -xzf go1.23.4.linux-amd64.tar.gz && \
+    rm go1.23.4.linux-amd64.tar.gz
 
 # Set Go environment variables
 ENV GOPATH=/home/vscode/go
